@@ -15,7 +15,7 @@
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', sans-serif;
             line-height: 1.6;
             color: #333;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, #10B981 0%, #059669 100%);
             padding: 20px;
         }
         
@@ -29,14 +29,14 @@
         }
         
         h1 {
-            color: #667eea;
+            color: #10B981;
             font-size: 2.5em;
             margin-bottom: 10px;
         }
         
         .app-name {
             font-size: 1.2em;
-            color: #764ba2;
+            color: #059669;
             margin-bottom: 30px;
         }
         
@@ -46,7 +46,7 @@
             margin-top: 30px;
             margin-bottom: 15px;
             padding-bottom: 10px;
-            border-bottom: 2px solid #667eea;
+            border-bottom: 2px solid #10B981;
         }
         
         h3 {
@@ -72,10 +72,10 @@
         }
         
         .highlight {
-            background: #f0f4ff;
+            background: #f0fdf4;
             padding: 20px;
             border-radius: 10px;
-            border-left: 4px solid #667eea;
+            border-left: 4px solid #10B981;
             margin: 20px 0;
         }
         
@@ -87,7 +87,7 @@
         }
         
         .contact a {
-            color: #667eea;
+            color: #10B981;
             text-decoration: none;
             font-weight: 600;
         }
@@ -109,6 +109,24 @@
             font-size: 1.2em;
         }
         
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+        }
+        
+        th, td {
+            padding: 12px 15px;
+            text-align: left;
+            border-bottom: 1px solid #e5e7eb;
+        }
+        
+        th {
+            background: #f0fdf4;
+            color: #333;
+            font-weight: 600;
+        }
+        
         @media (max-width: 600px) {
             .container {
                 padding: 20px;
@@ -127,11 +145,11 @@
 <body>
     <div class="container">
         <h1>Privacy Policy</h1>
-        <p class="app-name"><strong>LastTime - Recurring Task Tracker</strong></p>
-        <p><em>Last Updated: March 18, 2026</em></p>
+        <p class="app-name"><strong>LastTime - Track &amp; Remind</strong></p>
+        <p><em>Last Updated: May 4, 2026</em></p>
         
         <div class="highlight">
-            <p><span class="emoji">🔒</span> <strong>Your Privacy Matters:</strong> LastTime is designed with privacy as a core principle. We believe your task data is yours and yours alone.</p>
+            <p><span class="emoji">🔒</span> <strong>Your Privacy Matters:</strong> LastTime is designed with privacy as a core principle. We only collect the minimum data needed to provide account and cloud backup features. You can use the app without an account — all features work locally.</p>
         </div>
         
         <h2>1. Overview</h2>
@@ -139,33 +157,92 @@
         
         <h2>2. Data Collection</h2>
         
-        <h3>What We DON'T Collect:</h3>
+        <h3>A. Without an Account (Guest Mode)</h3>
+        <p>If you choose to use LastTime without signing in, we collect <strong>nothing</strong>. All your data stays on your device.</p>
         <ul>
-            <li><span class="emoji">✅</span> We do NOT collect any personal information</li>
-            <li><span class="emoji">✅</span> We do NOT track your location</li>
-            <li><span class="emoji">✅</span> We do NOT collect your task data</li>
-            <li><span class="emoji">✅</span> We do NOT use cookies or tracking technologies</li>
-            <li><span class="emoji">✅</span> We do NOT share any data with third parties</li>
-            <li><span class="emoji">✅</span> We do NOT use analytics or crash reporting services</li>
+            <li><span class="emoji">✅</span> No personal information collected</li>
+            <li><span class="emoji">✅</span> No tracking or analytics</li>
+            <li><span class="emoji">✅</span> No data shared with third parties</li>
+            <li><span class="emoji">✅</span> All tasks stored locally on your device</li>
         </ul>
         
-        <h3>What We DO Collect:</h3>
-        <p><strong>NOTHING.</strong> All your data stays on your device.</p>
+        <h3>B. With an Account (Signed In)</h3>
+        <p>If you choose to create an account for cloud backup, we collect the following:</p>
         
-        <h2>3. How Your Data is Stored</h2>
-        <p>All task data (titles, descriptions, dates, notes, etc.) is stored <strong>locally on your device</strong> using secure device storage (AsyncStorage). Your data:</p>
+        <table>
+            <tr>
+                <th>Data</th>
+                <th>Purpose</th>
+                <th>Stored Where</th>
+            </tr>
+            <tr>
+                <td>Email address</td>
+                <td>Account authentication</td>
+                <td>Firebase Authentication</td>
+            </tr>
+            <tr>
+                <td>User ID</td>
+                <td>Identify your account</td>
+                <td>Firebase Authentication</td>
+            </tr>
+            <tr>
+                <td>Task data (titles, dates, intervals)</td>
+                <td>Cloud backup &amp; sync</td>
+                <td>Firebase Firestore</td>
+            </tr>
+        </table>
+        
+        <div class="highlight">
+            <p><span class="emoji">💡</span> <strong>Important:</strong> We do NOT collect your name, phone number, location, contacts, photos, or any other personal data beyond what is listed above.</p>
+        </div>
+        
+        <h2>3. Authentication Methods</h2>
+        <p>LastTime offers three ways to sign in:</p>
+        
+        <h3>Apple Sign In</h3>
         <ul>
-            <li><span class="emoji">📱</span> Stays on your phone/tablet</li>
-            <li><span class="emoji">🔒</span> Is NOT uploaded to our servers (we don't have servers)</li>
-            <li><span class="emoji">🚫</span> Is NOT synced to the cloud</li>
-            <li><span class="emoji">💾</span> Is only accessible by you on your device</li>
+            <li>Uses Apple's secure authentication</li>
+            <li>You can choose "Hide My Email" to keep your real email private</li>
+            <li>We only receive the email address and a unique identifier from Apple</li>
+        </ul>
+        
+        <h3>Google Sign In</h3>
+        <ul>
+            <li>Uses Google's OAuth 2.0 authentication</li>
+            <li>We only receive your email address and a unique identifier from Google</li>
+        </ul>
+        
+        <h3>Email &amp; Password</h3>
+        <ul>
+            <li>Your password is securely handled by Firebase Authentication</li>
+            <li>We never store or have access to your plain-text password</li>
+            <li>Password reset is available via email</li>
+        </ul>
+        
+        <h2>4. How Your Data is Stored</h2>
+        
+        <h3>Local Storage (All Users)</h3>
+        <ul>
+            <li><span class="emoji">📱</span> Task data is always stored locally on your device using AsyncStorage</li>
+            <li><span class="emoji">🔒</span> Protected by device-level encryption (iOS/Android standard)</li>
+        </ul>
+        
+        <h3>Cloud Storage (Signed-In Users Only)</h3>
+        <ul>
+            <li><span class="emoji">☁️</span> Task data is additionally synced to Google Firebase Firestore</li>
+            <li><span class="emoji">🌍</span> Data is stored in Firebase servers (europe-west1 region)</li>
+            <li><span class="emoji">🔐</span> Secured by Firebase security rules — only you can access your data</li>
+            <li><span class="emoji">🔄</span> Syncing allows you to recover your data when switching devices or reinstalling the app</li>
         </ul>
         
         <div class="highlight">
-            <p><span class="emoji">💡</span> <strong>Important:</strong> If you uninstall the app or delete app data, all your tasks will be permanently deleted. We cannot recover them because we don't have copies.</p>
+            <p><span class="emoji">⚠️</span> <strong>Guest Users:</strong> If you use the app without signing in and uninstall it, all your data will be permanently lost. We cannot recover it. Sign in to enable cloud backup.</p>
         </div>
         
-        <h2>4. Permissions</h2>
+        <h2>5. Data Sharing</h2>
+        <p>We do <strong>NOT</strong> share, sell, or transfer your personal data to any third parties. Your data is used solely to provide the app's functionality.</p>
+        
+        <h2>6. Permissions</h2>
         <p>LastTime only requests permissions that are essential for core functionality:</p>
         
         <h3>Notifications</h3>
@@ -177,8 +254,21 @@
         
         <p>You can disable notifications at any time in your device settings.</p>
         
-        <h2>5. Third-Party Services</h2>
-        <p>LastTime uses minimal third-party services:</p>
+        <h2>7. Third-Party Services</h2>
+        
+        <h3>Firebase Authentication (Google)</h3>
+        <ul>
+            <li><strong>Purpose:</strong> User account management</li>
+            <li><strong>Data:</strong> Email address, user ID</li>
+            <li><strong>Privacy Policy:</strong> <a href="https://firebase.google.com/support/privacy" target="_blank">firebase.google.com/support/privacy</a></li>
+        </ul>
+        
+        <h3>Firebase Firestore (Google)</h3>
+        <ul>
+            <li><strong>Purpose:</strong> Cloud data backup and sync</li>
+            <li><strong>Data:</strong> Task data (titles, dates, intervals, categories)</li>
+            <li><strong>Privacy Policy:</strong> <a href="https://firebase.google.com/support/privacy" target="_blank">firebase.google.com/support/privacy</a></li>
+        </ul>
         
         <h3>Expo (React Native Framework)</h3>
         <ul>
@@ -201,30 +291,49 @@
             <li><strong>Privacy Policy:</strong> <a href="https://policies.google.com/privacy" target="_blank">policies.google.com/privacy</a></li>
         </ul>
         
-        <h2>6. Children's Privacy</h2>
-        <p>LastTime does not knowingly collect any information from children under 13 years of age. The app is designed to be safe for users of all ages as it does not collect personal information.</p>
-        
-        <h2>7. Your Rights</h2>
-        <p>Since all your data is stored locally on your device, you have complete control:</p>
+        <h2>8. Your Rights</h2>
+        <p>You have complete control over your data:</p>
         <ul>
             <li><span class="emoji">✅</span> <strong>Access:</strong> All your data is visible in the app</li>
             <li><span class="emoji">✅</span> <strong>Edit:</strong> You can edit any task at any time</li>
             <li><span class="emoji">✅</span> <strong>Delete:</strong> You can delete individual tasks or all data</li>
-            <li><span class="emoji">✅</span> <strong>Export:</strong> Currently not supported (all data is local)</li>
+            <li><span class="emoji">✅</span> <strong>Sign Out:</strong> You can sign out at any time — local data remains on your device</li>
+            <li><span class="emoji">✅</span> <strong>Account Deletion:</strong> Contact us to request complete account and data deletion</li>
         </ul>
         
-        <h2>8. Data Security</h2>
-        <p>We take security seriously:</p>
+        <h2>9. Data Retention</h2>
         <ul>
-            <li><span class="emoji">🔒</span> Data is stored using device-level encryption (iOS/Android standard)</li>
-            <li><span class="emoji">🚫</span> No data transmission over the internet</li>
-            <li><span class="emoji">✅</span> No server-side vulnerabilities (because there's no server)</li>
+            <li>Local data: Retained until you delete it or uninstall the app</li>
+            <li>Cloud data: Retained as long as your account exists</li>
+            <li>Account deletion: Upon request, all associated data is permanently deleted within 30 days</li>
         </ul>
         
-        <h2>9. International Users</h2>
-        <p>LastTime is available worldwide. Since all data is stored locally on your device, there are no cross-border data transfers or data residency issues.</p>
+        <h2>10. Children's Privacy</h2>
+        <p>LastTime does not knowingly collect any information from children under 13 years of age. If you believe a child under 13 has created an account, please contact us and we will promptly delete the account.</p>
         
-        <h2>10. Changes to This Policy</h2>
+        <h2>11. Data Security</h2>
+        <ul>
+            <li><span class="emoji">🔒</span> Local data is stored using device-level encryption</li>
+            <li><span class="emoji">🔐</span> Cloud data is encrypted in transit (TLS) and at rest by Firebase</li>
+            <li><span class="emoji">🛡️</span> Authentication uses industry-standard OAuth 2.0 and secure token handling</li>
+            <li><span class="emoji">✅</span> Passwords are never stored in plain text</li>
+        </ul>
+        
+        <h2>12. International Users</h2>
+        <p>LastTime is available worldwide. If you sign in with an account, your data may be processed in Firebase servers located in the European Union (europe-west1). By using the cloud backup feature, you consent to this data transfer.</p>
+        
+        <h2>13. GDPR Compliance (EU Users)</h2>
+        <p>If you are located in the European Union, you have additional rights under the General Data Protection Regulation:</p>
+        <ul>
+            <li>Right to access your personal data</li>
+            <li>Right to rectification of inaccurate data</li>
+            <li>Right to erasure ("right to be forgotten")</li>
+            <li>Right to data portability</li>
+            <li>Right to withdraw consent at any time</li>
+        </ul>
+        <p>To exercise any of these rights, contact us at the email below.</p>
+        
+        <h2>14. Changes to This Policy</h2>
         <p>We may update this Privacy Policy from time to time. We will notify you of any changes by:</p>
         <ul>
             <li>Updating the "Last Updated" date</li>
@@ -232,17 +341,9 @@
             <li>Notifying users in the app (for significant changes)</li>
         </ul>
         
-        <h2>11. Open Source</h2>
-        <p>LastTime values transparency. If you want to verify our privacy claims, you can:</p>
-        <ul>
-            <li>Review the app's code (contact us for details)</li>
-            <li>Inspect network traffic (you'll see no data is sent)</li>
-            <li>Check device storage (data is local only)</li>
-        </ul>
-        
-        <h2>12. Contact Us</h2>
+        <h2>15. Contact Us</h2>
         <div class="contact">
-            <p>If you have any questions or concerns about this Privacy Policy, please contact us:</p>
+            <p>If you have any questions, concerns, or data deletion requests, please contact us:</p>
             <p><strong>Email:</strong> <a href="mailto:gerrjob@gmail.com">gerrjob@gmail.com</a></p>
             <p><strong>GitHub:</strong> <a href="https://github.com/ezomero" target="_blank">github.com/ezomero</a></p>
         </div>
@@ -250,12 +351,12 @@
         <div class="highlight" style="margin-top: 30px;">
             <h3><span class="emoji">📝</span> Summary</h3>
             <p><strong>In Plain English:</strong></p>
-            <p>LastTime doesn't collect, store, or share ANY of your personal data. Everything stays on your phone. We can't see your tasks, we can't track you, and we don't want to. Your privacy is 100% protected because we literally have no access to your data.</p>
+            <p>You can use LastTime without an account — nothing is collected. If you sign in, we store your email and task data in Firebase for cloud backup. We never sell or share your data. You can delete your account and all associated data at any time by contacting us.</p>
         </div>
         
         <div class="footer">
-            <p>© 2026 LastTime. All rights reserved.</p>
-            <p>Made with <span style="color: #e74c3c;">❤️</span> for privacy-conscious users</p>
+            <p>&copy; 2026 LastTime. All rights reserved.</p>
+            <p>Made with <span style="color: #e74c3c;">&hearts;</span> for privacy-conscious users</p>
         </div>
     </div>
 </body>
